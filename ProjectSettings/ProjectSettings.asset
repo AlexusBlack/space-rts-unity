@@ -632,7 +632,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: aa62cda7-1432-4cd8-89f2-21f3f394910a
   projectName: Space-RTS
   organizationId: alexus-black
