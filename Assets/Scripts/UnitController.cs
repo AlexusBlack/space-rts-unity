@@ -18,6 +18,10 @@ public class UnitController : MonoBehaviour {
 
 	private bool selected = false;
 
+	void Start() {
+		if(!Owner.units.Contains(gameObject)) Debug.LogError("Owner does not own the unit");
+	}
+
 	public void Select() {
 		selected = true;
 		
