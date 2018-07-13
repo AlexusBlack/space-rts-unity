@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 135705763639869992}
   - component: {fileID: 195187318458138052}
   - component: {fileID: 114151014183480794}
-  - component: {fileID: 114462243828202918}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -228,19 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Owner: {fileID: 0}
   Selection: {fileID: 1550282434043162}
---- !u!114 &114462243828202918
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1515400747473354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51aa23f5fda354ab7b7b799b86d110c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
-  canMove: 1
 --- !u!135 &135705763639869992
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ShipUnitController : MonoBehaviour {
+public class PlayerUnitController : MonoBehaviour {
 	public Camera Camera;
-	
 	public bool canMove = true;
 
 	private NavMeshAgent agent;
