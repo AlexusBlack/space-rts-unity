@@ -95,6 +95,7 @@ public class GameController : MonoBehaviour {
 		
 		UnitPanel.TypeText.text = unit.Type;
 		UnitPanel.NameText.text = unit.Name;
+		UnitPanel.OwnerText.text = unit.Owner.name;
 		UnitPanel.HealthText.text = "Health: " + unit.Health + "/" + unit.MaxHealth;
 
 		UnitPanel.gameObject.SetActive(true);

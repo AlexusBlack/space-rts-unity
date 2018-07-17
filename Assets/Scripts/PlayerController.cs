@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+  public string name;
+
   public GameController GameController;
   public List<UnitController> Units;
 
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
   private int metal;
 
   public void Start() {
+    if(name == "") name = gameObject.name;
     // reporting to game controller
     GameController.Players.Add(this);
   }
