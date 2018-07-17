@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
 	public List<UnitController> SelectedUnits;
 	public StatsPanelUi UnitPanel;
 	public UIResourcesPanel ResourcesPanel;
+	public List<GameObject> ButtonPanels;
 
 	private bool isSelecting = false;
   private Vector3 selectStartMousePosition;
@@ -93,7 +94,7 @@ public class GameController : MonoBehaviour {
       oldSelectedUnit.GetComponent<UnitController>().Deselect();
     }
     SelectedUnits.Clear();
-    UnitPanel.gameObject.SetActive(false);
+    HideUnitPanel();
   }
 
 	private void ShowUnitPanel(UnitController unit) {
@@ -108,10 +109,26 @@ public class GameController : MonoBehaviour {
 		UnitPanel.HealthText.text = "Health: " + unit.Health + "/" + unit.MaxHealth;
 
 		UnitPanel.gameObject.SetActive(true);
+
+		if(unit.Owner == CurrentPlayer) {
+			var panel = unit.GetComponent<PlayerUnitController>().ButtonsPanel;
+			SetActiveButtonsPanel(panel);
+		} else {
+			HideButtonPanels();
+		}
 	}
 
 	private void HideUnitPanel() {
 		UnitPanel.gameObject.SetActive(false);
+		HideButtonPanels();
 	}
-  
+
+	private void SetActiveButtonsPanel(GameObject panel) {
+		ButtonPanels.ForEach(p => p.SetActive(p == panel));
+	}
+
+	private void HideButtonPanels() {
+		ButtonPanels.ForEach(p => p.SetActive(false));
+	}
+
 }
