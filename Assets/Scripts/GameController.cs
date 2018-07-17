@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +8,23 @@ public class GameController : MonoBehaviour {
 	public PlayerController CurrentPlayer;
 	public List<UnitController> SelectedUnits;
 	public StatsPanelUi UnitPanel;
+	public UIResourcesPanel ResourcesPanel;
 
 	private bool isSelecting = false;
   private Vector3 selectStartMousePosition;
 
-	void Update() {
+	void Start() {
+		renderCurrentPlayerResources();
+		CurrentPlayer.ResourcesAmountChanged += (o, e) => renderCurrentPlayerResources();
+	}
+
+  private void renderCurrentPlayerResources()
+  {
+    ResourcesPanel.DilithiumAmountText.text = "Dilithium: " + CurrentPlayer.Dilithium;
+    ResourcesPanel.MetalAmountText.text = "Metal: " + CurrentPlayer.Metal;
+  }
+
+  void Update() {
 		// If we let go of the left mouse button, end selection
 		if(Input.GetMouseButtonDown(0)) {
 			isSelecting = true;
