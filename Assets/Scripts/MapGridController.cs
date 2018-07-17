@@ -20,6 +20,7 @@ public class MapGridController : MonoBehaviour {
     if (Input.GetMouseButtonUp(0))
     {
       isSelecting = false;
+			if(Owner.selectedUnits.Count == 0) Owner.DeselectAll();
     }
 	}
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class UnitController : MonoBehaviour {
-	public UnitPanelController UnitPanel;
+	public StatsPanelUi UnitPanel;
 	public PlayerController Owner;
 	public GameObject Selection;
 	public int Health = 100;
@@ -19,7 +19,8 @@ public class UnitController : MonoBehaviour {
 	private bool selected = false;
 
 	void Start() {
-		if(!Owner.units.Contains(gameObject)) Debug.LogError("Owner does not own the unit");
+		// Reporting to Owner
+		Owner.units.Add(gameObject);
 	}
 
 	public void Select() {
