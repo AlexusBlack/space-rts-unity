@@ -4,29 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-  public GameObject UnitPanel;
-  public List<GameObject> units;
-  public List<GameObject> selectedUnits;
+  public GameController GameController;
+  public List<UnitController> Units;
 
-  public void SetSelected(GameObject unit)
-  {
-    foreach (var oldSelectedUnit in selectedUnits)
-    {
-      oldSelectedUnit.GetComponent<UnitController>().Deselect();
-    }
-		selectedUnits.Clear();
-    selectedUnits.Add(unit);
-    unit.GetComponent<UnitController>().Select();
-    UnitPanel.SetActive(true);
-  }
-
-  public void DeselectAll()
-  {
-    foreach (var oldSelectedUnit in selectedUnits)
-    {
-      oldSelectedUnit.GetComponent<UnitController>().Deselect();
-    }
-    selectedUnits.Clear();
-    UnitPanel.SetActive(false);
+  public void Start() {
+    // reporting to game controller
+    GameController.Players.Add(this);
   }
 }

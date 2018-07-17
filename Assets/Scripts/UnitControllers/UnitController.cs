@@ -4,8 +4,9 @@ using UnityEngine;
 
 
 public class UnitController : MonoBehaviour {
-	public StatsPanelUi UnitPanel;
+	public GameController GameController;
 	public PlayerController Owner;
+
 	public GameObject Selection;
 	public int Health = 100;
 	public int MaxHealth = 100;
@@ -20,7 +21,7 @@ public class UnitController : MonoBehaviour {
 
 	void Start() {
 		// Reporting to Owner
-		Owner.units.Add(gameObject);
+		Owner.Units.Add(this);
 	}
 
 	public void Select() {
@@ -29,13 +30,6 @@ public class UnitController : MonoBehaviour {
 		// Showing selection indicator
 		if(Selection != null) {
 			Selection.SetActive(true);
-		}
-
-		// Showing unit info on its panel
-		if(UnitPanel != null) {
-			UnitPanel.TypeText.text = Type;
-			UnitPanel.NameText.text = Name;
-			UnitPanel.HealthText.text = "Health: " + Health + "/" + MaxHealth;
 		}
 	}
 
@@ -48,7 +42,7 @@ public class UnitController : MonoBehaviour {
 
 	void OnMouseDown() {
 		if(Selectable && Input.GetMouseButton(0)) {
-			Owner.SetSelected(gameObject);
+			GameController.SetSelected(this);
 		}
 	}	
 
