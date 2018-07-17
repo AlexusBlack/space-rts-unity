@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour {
 		} else if (Input.GetMouseButtonUp(0))
     {
       isSelecting = false;
-			if(SelectedUnits.Count == 0) UnitPanel.gameObject.SetActive(false);
+			if(SelectedUnits.Count == 0) HideUnitPanel();
     }
 	}
 
@@ -56,13 +56,22 @@ public class GameController : MonoBehaviour {
 		// box selection works only for user units
 		foreach(var unit in CurrentPlayer.Units) {
 			var selected = SelectedUnits.Contains(unit);
+			// if state of unit doesn't match current state
 			if(Utils.IsWithinSelectionBounds(unit.gameObject, selectStartMousePosition) != selected) {
+				// matching it
 				if(selected) {
 					SelectedUnits.Remove(unit);
 					unit.Deselect();
 				} else {
 					SelectedUnits.Add(unit);
 					unit.Select();
+				}
+
+				// when only one unit selected showing panel for it
+				if(SelectedUnits.Count == 1) {
+					ShowUnitPanel(SelectedUnits[0]);
+				} else {
+					HideUnitPanel();
 				}
 			}
 		}
@@ -101,5 +110,8 @@ public class GameController : MonoBehaviour {
 		UnitPanel.gameObject.SetActive(true);
 	}
 
+	private void HideUnitPanel() {
+		UnitPanel.gameObject.SetActive(false);
+	}
   
 }
