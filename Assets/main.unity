@@ -852,6 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fb9d2cb3a9a4b619875407bd17c5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MapGrid: {fileID: 2057671662}
   Players: []
   CurrentPlayer: {fileID: 1701698698}
   SelectedUnits: []
@@ -1122,7 +1123,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1159740195
 Transform:
@@ -1597,7 +1598,7 @@ MeshCollider:
   m_GameObject: {fileID: 1398218894}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -2800,10 +2801,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2057671662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 746a6fdea9ac04b5fbcc29d65f517e37, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f8875092ded4a188640f4c508ee579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameController: {fileID: 1116889603}
 --- !u!1 &2103951895
 GameObject:
   m_ObjectHideFlags: 0

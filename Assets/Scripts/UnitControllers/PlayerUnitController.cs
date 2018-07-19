@@ -27,8 +27,12 @@ public class PlayerUnitController : MonoBehaviour {
 			var ray = camera.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if(Physics.Raycast(ray, out hit)) {
-				agent.SetDestination(hit.point);
+				GoTo(hit.point);
 			}
 		}
+	}
+
+	public void GoTo(Vector3 destination) {
+		agent.SetDestination(destination);
 	}
 }

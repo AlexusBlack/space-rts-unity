@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
+	public GameObject MapGrid;
 	public List<PlayerController> Players;
 	public PlayerController CurrentPlayer;
 	public List<UnitController> SelectedUnits;
@@ -15,9 +16,27 @@ public class GameController : MonoBehaviour {
   private Vector3 selectStartMousePosition;
 
 	void Start() {
+		if(MapGrid == null) {
+			Debug.LogError("Map grid is required");
+		} else {
+			var eventsTriggerComponent = MapGrid.GetComponent<MouseEventsTrigger>();
+			if(eventsTriggerComponent == null) {
+				Debug.LogError("Map grid should be able to trigger mouse events");
+			} else {
+				eventsTriggerComponent.MouseDown += OnMapGridMouseDown;
+			}
+		}
+
 		renderCurrentPlayerResources();
 		CurrentPlayer.ResourcesAmountChanged += (o, e) => renderCurrentPlayerResources();
 	}
+
+  private void OnMapGridMouseDown(object sender, EventArgs e)
+  {
+    if(Input.GetMouseButton(0)) {
+			DeselectAll();
+		}
+  }
 
   private void renderCurrentPlayerResources()
   {
