@@ -118,24 +118,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1523031658753200, guid: fa0498bb53eb94aff836b37caaa6da27,
     type: 2}
   m_PrefabInternal: {fileID: 1190801125}
---- !u!1 &120907227 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1515400747473354, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-    type: 2}
-  m_PrefabInternal: {fileID: 414679239}
---- !u!114 &120907232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 120907227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51aa23f5fda354ab7b7b799b86d110c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 1
-  ButtonsPanel: {fileID: 1323383110}
 --- !u!1 &142408408
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +273,7 @@ GameObject:
   - component: {fileID: 347597092}
   - component: {fileID: 347597091}
   - component: {fileID: 347597090}
+  - component: {fileID: 347597094}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -375,6 +358,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &347597094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 347597089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a75645e084445ba893bbc1a6a4b18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameController: {fileID: 1116889603}
+  UnitPanel: {fileID: 2016798986}
+  ResourcesPanel: {fileID: 1145544043}
+  ButtonPanels:
+  - {fileID: 1326414450}
+  - {fileID: 1323383110}
+  - {fileID: 73786106}
 --- !u!1001 &414679239
 Prefab:
   m_ObjectHideFlags: 0
@@ -414,23 +415,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Owner
       value: 
       objectReference: {fileID: 1701698698}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: UnitPanel
       value: 
       objectReference: {fileID: 2016798986}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Type
       value: Builder
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Name
       value: DFP Scotty
       objectReference: {fileID: 0}
@@ -438,11 +435,35 @@ Prefab:
       propertyPath: m_Name
       value: Unit (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+    - target: {fileID: 0}
+      propertyPath: GameController
+      value: 
+      objectReference: {fileID: 1116889603}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
         type: 2}
       propertyPath: GameController
       value: 
       objectReference: {fileID: 1116889603}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: Owner
+      value: 
+      objectReference: {fileID: 1701698698}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: Name
+      value: USS Scotty
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: Type
+      value: Builder
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: ButtonsPanel
+      value: 
+      objectReference: {fileID: 1323383110}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c5fe9efaab26421e86e4f99ff95dc19, type: 2}
   m_IsPrefabParent: 0
@@ -570,6 +591,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 503675097}
+  - component: {fileID: 503675099}
   m_Layer: 0
   m_Name: ButtonPanels
   m_TagString: Untagged
@@ -598,6 +620,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &503675099
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503675096}
 --- !u!1 &631477198
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,31 +825,51 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Owner
       value: 
       objectReference: {fileID: 1701698698}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: UnitPanel
       value: 
       objectReference: {fileID: 2016798986}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Type
       value: Scout
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Name
       value: DFP Brave
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+    - target: {fileID: 0}
+      propertyPath: GameController
+      value: 
+      objectReference: {fileID: 1116889603}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
         type: 2}
       propertyPath: GameController
       value: 
       objectReference: {fileID: 1116889603}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: Owner
+      value: 
+      objectReference: {fileID: 1701698698}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: Name
+      value: USS Brave
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: Type
+      value: Scout
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: ButtonsPanel
+      value: 
+      objectReference: {fileID: 1326414450}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c5fe9efaab26421e86e4f99ff95dc19, type: 2}
   m_IsPrefabParent: 0
@@ -852,16 +900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fb9d2cb3a9a4b619875407bd17c5e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapGrid: {fileID: 2057671662}
+  UiController: {fileID: 347597094}
   Players: []
   CurrentPlayer: {fileID: 1701698698}
   SelectedUnits: []
-  UnitPanel: {fileID: 2016798986}
-  ResourcesPanel: {fileID: 1145544043}
-  ButtonPanels:
-  - {fileID: 1326414450}
-  - {fileID: 1323383110}
-  - {fileID: 73786106}
 --- !u!4 &1116889604
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,11 +1088,11 @@ GameObject:
   - component: {fileID: 1159740195}
   - component: {fileID: 1159740194}
   - component: {fileID: 1159740193}
-  - component: {fileID: 1159740192}
   - component: {fileID: 1159740191}
+  - component: {fileID: 1159740192}
   m_Layer: 0
   m_Name: Planet
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1073,23 +1115,23 @@ MonoBehaviour:
 --- !u!114 &1159740192
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1159740190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331e4be68b72a4735948a4a2950b8cd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 48b4bc4ce408247a7bbe9d4d5a116c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GameController: {fileID: 1116889603}
   Owner: {fileID: 1760186138}
+  ButtonsPanel: {fileID: 0}
   Selection: {fileID: 1398218894}
   Health: 10000
   MaxHealth: 10000
   Name: Beta Prime
   Type: Planet
-  Selectable: 1
+  CanMove: 0
 --- !u!195 &1159740193
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1385,6 +1427,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 503675097}
     m_Modifications:
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224664222616796298, guid: fa0498bb53eb94aff836b37caaa6da27,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1526,6 +1573,31 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1116889603}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToCommand
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa0498bb53eb94aff836b37caaa6da27, type: 2}
@@ -1702,24 +1774,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444095571}
---- !u!1 &1472489460 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1515400747473354, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-    type: 2}
-  m_PrefabInternal: {fileID: 1088457347}
---- !u!114 &1472489465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1472489460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51aa23f5fda354ab7b7b799b86d110c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 1
-  ButtonsPanel: {fileID: 1326414450}
 --- !u!1 &1482661908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,13 +1963,11 @@ Prefab:
       propertyPath: m_Name
       value: Enemy Unit
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: Owner
       value: 
       objectReference: {fileID: 2103951896}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: GameController
       value: 
       objectReference: {fileID: 1116889603}
@@ -1924,15 +1976,38 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 740d0d9d1fc0d4e52bd24bdce26b5907, type: 2}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+    - target: {fileID: 0}
+      propertyPath: Type
+      value: Scout
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Name
+      value: RSE Centurion
+      objectReference: {fileID: 0}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: GameController
+      value: 
+      objectReference: {fileID: 1116889603}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: Owner
+      value: 
+      objectReference: {fileID: 2103951896}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+        type: 2}
+      propertyPath: ButtonsPanel
+      value: 
+      objectReference: {fileID: 1326414450}
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
         type: 2}
       propertyPath: Type
       value: Scout
       objectReference: {fileID: 0}
-    - target: {fileID: 114151014183480794, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
+    - target: {fileID: 114153807764839046, guid: 1c5fe9efaab26421e86e4f99ff95dc19,
         type: 2}
       propertyPath: Name
-      value: RSE Centurion
+      value: RSS Centurion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c5fe9efaab26421e86e4f99ff95dc19, type: 2}
@@ -2323,6 +2398,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 503675097}
     m_Modifications:
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224664222616796298, guid: fa0498bb53eb94aff836b37caaa6da27,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2459,7 +2539,32 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1523031658753200, guid: fa0498bb53eb94aff836b37caaa6da27, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1116889603}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToCommand
+      objectReference: {fileID: 0}
+    - target: {fileID: 114024914650745302, guid: fa0498bb53eb94aff836b37caaa6da27,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa0498bb53eb94aff836b37caaa6da27, type: 2}
@@ -2717,7 +2822,6 @@ GameObject:
   - component: {fileID: 2057671665}
   - component: {fileID: 2057671664}
   - component: {fileID: 2057671663}
-  - component: {fileID: 2057671667}
   m_Layer: 0
   m_Name: MapGrid
   m_TagString: Untagged
@@ -2793,17 +2897,6 @@ Transform:
   m_Father: {fileID: 438703132}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2057671667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2057671662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20f8875092ded4a188640f4c508ee579, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2103951895
 GameObject:
   m_ObjectHideFlags: 0
