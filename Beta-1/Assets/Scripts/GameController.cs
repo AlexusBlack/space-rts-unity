@@ -35,4 +35,10 @@ public class GameController : MonoBehaviour
     UiController.GetPositionFromUser((destination) => SelectedUnits[0].GoTo(destination));
   }
 
+  public void BuildBuildingCommand(GameObject building) {
+    Debug.Log("Building: " + building.name);
+    var newBuilding = Instantiate(building, new Vector3(), Quaternion.Euler(0,0,0));
+    UiController.BuildingOnCursor = newBuilding;
+  }
+
 }

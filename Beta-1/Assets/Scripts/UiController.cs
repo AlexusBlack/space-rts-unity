@@ -9,6 +9,7 @@ public class UiController : MonoBehaviour {
 	public StatsPanelUi UnitPanel;
   public UIResourcesPanel ResourcesPanel;
   public List<GameObject> ButtonPanels;
+  public GameObject BuildingOnCursor;
 
 	private PlayerController CurrentPlayer;
 	private bool PlayerSelectingPosition = false;
@@ -17,9 +18,11 @@ public class UiController : MonoBehaviour {
 	private bool boxSelectionActive = false;
 	private Rect boxSelectionRect;
   private event EventHandler PlayerPositionSelected = delegate { };
+  private Camera camera;
 
 	// Use this for initialization
 	void Start () {
+    camera = Camera.main;
 		CurrentPlayer = GameController.CurrentPlayer;
 		renderCurrentPlayerResources();
     GameController.CurrentPlayer.ResourcesAmountChanged += (o, e) => renderCurrentPlayerResources();
@@ -35,6 +38,16 @@ public class UiController : MonoBehaviour {
   {
 		HandleLeftMouseButton();
 		HandleRightMouseButton();
+
+    if(BuildingOnCursor != null) {
+      var mousePos = Input.mousePosition;
+      Ray ray = camera.ScreenPointToRay(mousePos);
+      RaycastHit hit;
+      if(Physics.Raycast(ray, out hit)) {
+        BuildingOnCursor.transform.position = new Vector3(hit.point.x, 1, hit.point.z);
+      }
+    }
+    
   }
 
 	void HandleLeftMouseButton() {
@@ -180,7 +193,7 @@ public class UiController : MonoBehaviour {
 
     UnitPanel.TypeText.text = unit.Type;
     UnitPanel.NameText.text = unit.Name;
-    UnitPanel.OwnerText.text = unit.Owner.name;
+    UnitPanel.OwnerText.text = unit.Owner.Name;
     UnitPanel.HealthText.text = "Health: " + unit.Health + "/" + unit.MaxHealth;
 
     UnitPanel.gameObject.SetActive(true);
